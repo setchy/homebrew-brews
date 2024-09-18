@@ -1,6 +1,6 @@
 cask "atlasify" do
-  version "0.1.0"
-  sha256 "fdee7eaa752428590ec4da4e3779f6ea7e2e9129e9bbf0e595bd1e311ddabc91"
+  version "0.2.0"
+  sha256 "9c3970bd8deff3f814188309a63cf6318205b368f89daece0be4440bc32f03a5"
 
   url "https://github.com/setchy/atlasify/releases/download/v#{version}/Atlasify-#{version}-universal-mac.zip"
   name "Atlasify"
