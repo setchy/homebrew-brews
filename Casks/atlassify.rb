@@ -1,4 +1,4 @@
-cask "atlasify" do
+cask "atlassify" do
   homepage "https://atlassify.io"
   
   version "1.0.0"
