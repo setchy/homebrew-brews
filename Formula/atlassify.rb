@@ -20,10 +20,14 @@ class Atlassify < Formula
   preflight do
     retries ||= 3
     ohai "Attempting to close Atlassify.app to avoid unwanted user intervention" if retries >= 3
-    return unless system_command "/usr/bin/pkill", args: ["-f", "/Applications/Atlassify.app"]
-  rescue RuntimeError
-    sleep 1
-    retry unless (retries -= 1).zero?
+    while retries > 0
+      if system "/usr/bin/pkill", "-f", "/Applications/Atlassify.app"
+        break
+      else
+        retries -= 1
+        sleep 1
+      end
+    end
     opoo "Unable to forcibly close Atlassify.app"
   end
 
