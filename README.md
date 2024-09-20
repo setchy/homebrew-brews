@@ -1,2 +1,3 @@
-# Atlassify Homebrew Tap
-Homebrew tap for https://github.com/setchy/atlassify
+# My Homebrew Taps
+
+1. Homebrew tap for https://github.com/setchy/atlassify
