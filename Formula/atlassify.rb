@@ -1,4 +1,6 @@
-cask "atlassify" do
+class AtlassifyFormula < Formula
+  homepage "https://atlassify.io" 
+
   version "1.0.0"
   sha256 "a96385b53cb13db557b2d2a2ee3310dfbf3d322a83baa5d638a5bb9106bf8ad3"
 
