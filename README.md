@@ -1,3 +1,3 @@
 # My Homebrew Brews
 
-1. Homebrew tap for https://github.com/setchy/atlassify
+1. Homebrew cask for https://github.com/setchy/atlassify
