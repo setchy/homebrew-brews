@@ -1,13 +1,11 @@
-class AtlassifyFormula < Formula
-  homepage "https://atlassify.io" 
-
+class Atlassify < Formula
+  homepage "https://atlassify.io"
+  
   version "1.0.0"
   sha256 "a96385b53cb13db557b2d2a2ee3310dfbf3d322a83baa5d638a5bb9106bf8ad3"
-
   url "https://github.com/setchy/atlassify/releases/download/v#{version}/Atlassify-#{version}-universal-mac.zip"
   name "Atlassify"
   desc "Atlassian notifications on your menu bar"
-  homepage "https://github.com/setchy/atlassify"
 
   livecheck do
     url :url
