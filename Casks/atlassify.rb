@@ -1,8 +1,9 @@
 cask "atlassify" do
   homepage "https://atlassify.io"
   
-  version "1.1.0"
-  sha256 "e02a01cf497fb5b01f1abd8502dc64b2b4728b7f7c6f640bcaf2a95f6bee9b6e"
+  # 
+  version "1.0.0"
+  sha256 ":no_check"
   url "https://github.com/setchy/atlassify/releases/download/v#{version}/Atlassify-#{version}-universal-mac.zip"
   name "Atlassify"
   desc "Atlassian notifications on your menu bar"
