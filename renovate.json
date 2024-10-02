@@ -13,6 +13,8 @@
       "description": "Update homebrew cask version",
       "fileMatch": ["Casks/atlassify.rb"],
       "matchStrings": ["\\s?version\\s\"(?<currentValue>.+?)\"\\s"]
+      "automerge": true,
+      "automergeType": "branch"
     }
   ]
 }
