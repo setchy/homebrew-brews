@@ -3,7 +3,14 @@ cask "atlassify" do
   
   version "1.7.1"
   sha256 :no_check
-  url "https://github.com/setchy/atlassify/releases/download/v#{version}/Atlassify-#{version}-universal-mac.zip"
+
+  on_intel do
+    url "https://github.com/setchy/atlassify/releases/download/v#{version}/Atlassify-#{version}-mac.zip"
+  end
+  on_arm do
+    url "https://github.com/setchy/atlassify/releases/download/v#{version}/Atlassify-#{version}-arm64-mac.zip"
+  end
+
   name "Atlassify"
   desc "Atlassian notifications on your menu bar"
 
