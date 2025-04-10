@@ -1,7 +1,7 @@
 cask "atlassify" do
   homepage "https://atlassify.io"
   
-  version "1.15.0"
+  version "1.16.0"
   sha256 :no_check
 
   on_intel do
