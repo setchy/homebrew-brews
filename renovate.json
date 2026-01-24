@@ -10,8 +10,12 @@
       "depNameTemplate": "setchy/atlassify",
       "versioningTemplate": "loose",
       "description": "Update homebrew cask version",
-      "fileMatch": ["Casks/atlassify.rb"],
-      "matchStrings": ["\\s?version\\s\"(?<currentValue>.+?)\"\\s"]
+      "managerFilePatterns": [
+        "/Casks/atlassify.rb/"
+      ],
+      "matchStrings": [
+        "\\s?version\\s\"(?<currentValue>.+?)\"\\s"
+      ]
     }
   ]
 }
