@@ -17,5 +17,13 @@
         "\\s?version\\s\"(?<currentValue>.+?)\"\\s"
       ]
     }
+  ], 
+  "packageRules": [
+    {
+      "matchDatasources": ["github-tags"],
+      "matchDepNames": ["setchy/atlassify"],
+      "automerge": true,
+      "automergeType": "branch"
+    }
   ]
 }
