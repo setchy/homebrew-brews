@@ -24,7 +24,7 @@
       "matchDepNames": ["setchy/atlassify"],
       "automerge": true,
       "automergeType": "branch",
-      "stabilityDays": 0
+      "minimumReleaseAge": null
     }
   ]
 }
