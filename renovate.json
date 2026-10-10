@@ -1,8 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:best-practices"
-  ],
+  "extends": ["local>setchy/renovate-config"],
   "customManagers": [
     {
       "customType": "regex",
@@ -10,14 +8,10 @@
       "depNameTemplate": "setchy/atlassify",
       "versioningTemplate": "loose",
       "description": "Update homebrew cask version",
-      "managerFilePatterns": [
-        "/Casks/atlassify.rb/"
-      ],
-      "matchStrings": [
-        "\\s?version\\s\"(?<currentValue>.+?)\"\\s"
-      ]
+      "managerFilePatterns": ["/Casks/atlassify.rb/"],
+      "matchStrings": ["\\s?version\\s\"(?<currentValue>.+?)\"\\s"]
     }
-  ], 
+  ],
   "packageRules": [
     {
       "matchDatasources": ["github-tags"],
