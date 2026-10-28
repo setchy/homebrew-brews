@@ -17,6 +17,6 @@ permissions: {}
 jobs:
   validate:
     name: Config validation
-    uses: setchy/renovate-config/.github/workflows/renovate-config-validator.yml@291f5c93d0dc3e704a32d47670aa8f52b48a15a8 # main
+    uses: setchy/renovate-config/.github/workflows/renovate-config-validator.yml@d5436415c7e51ee02b3dd68a9356ba26297e5e38 # main
     permissions:
       contents: read
