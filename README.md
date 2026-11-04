@@ -78,6 +78,6 @@ Bugs in an app itself belong in that app's upstream repository.
 [homebrew]: https://github.com/setchy/homebrew-brews
 [homebrew-badge]: https://img.shields.io/badge/Homebrew-setchy%2Fbrews-FBB040?logo=homebrew&logoColor=white
 [renovate]: https://github.com/setchy/homebrew-brews/issues/2
-[renovate-badge]: https://img.shields.io/badge/Renovate-enabled-1A1F6C?logo=renovate&logoColor=white
+[renovate-badge]: https://img.shields.io/badge/renovate-enabled-brightgreen.svg?logo=renovate&logoColor=white
 [commits]: https://github.com/setchy/homebrew-brews/commits/main
 [commit-badge]: https://img.shields.io/github/last-commit/setchy/homebrew-brews?logo=git&logoColor=white
