@@ -2,7 +2,7 @@ cask "atlassify" do
   arch arm: "-arm64"
   os macos: "-mac.zip", linux: ".AppImage"
 
-  version "3.17.2"
+  version "3.17.3"
   sha256 :no_check
 
   on_macos do
