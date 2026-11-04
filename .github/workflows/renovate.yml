@@ -5,11 +5,13 @@ on:
     paths:
       - renovate.json
       - renovate.json5
+      - .nvmrc
       - .github/workflows/renovate.yml
   push:
     paths:
       - renovate.json
       - renovate.json5
+      - .nvmrc
       - .github/workflows/renovate.yml
 
 permissions: {}
