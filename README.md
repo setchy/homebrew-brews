@@ -6,7 +6,7 @@
 A small tap for the Homebrew casks I build and maintain. Install with a single
 command, upgrade with the usual Homebrew muscle memory.
 
-## Install
+## 📦 Install
 
 ```sh
 brew install --cask setchy/brews/atlassify
@@ -19,13 +19,13 @@ brew tap setchy/brews
 brew install --cask atlassify
 ```
 
-## On tap
+## 🍺 On tap
 
 | Cask | Description | Upstream |
 | --- | --- | --- |
 | [`atlassify`](Casks/atlassify.rb) | Atlassian notifications in your menu bar | [setchy/atlassify](https://github.com/setchy/atlassify) |
 
-## Keeping things fresh
+## 🔄 Keeping things fresh
 
 ```sh
 brew update
@@ -39,7 +39,7 @@ straight away — refresh the tap metadata first:
 brew update && brew upgrade --cask atlassify
 ```
 
-## How this tap works
+## ⚙️ How this tap works
 
 - **Casks live in [`Casks/`](Casks)** — one file per cask, named after the cask
   token (lowercase, hyphenated, e.g. `Casks/atlassify.rb`).
@@ -51,7 +51,7 @@ brew update && brew upgrade --cask atlassify
 - **Actions workflows are vetted with [zizmor](https://github.com/zizmorcore/zizmor)** —
   workflow dependencies are hash-pinned, not tag-pinned.
 
-## Adding or changing a cask
+## 🧩 Adding or changing a cask
 
 1. Drop the cask in `Casks/<token>.rb`.
 2. Check it locally:
@@ -68,7 +68,7 @@ If the app ships its own updater, `sha256 :no_check` plus `auto_updates true`
 is the pragmatic combination (as `atlassify` does). Otherwise, let Renovate
 manage the checksum from the release assets.
 
-## Questions?
+## 💬 Questions?
 
 Open an [issue](https://github.com/setchy/homebrew-brews/issues) or send a PR.
 Bugs in an app itself belong in that app's upstream repository.
