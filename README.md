@@ -13,10 +13,15 @@ command, upgrade with the usual Homebrew muscle memory.
 brew install --cask setchy/brews/atlassify
 ```
 
-Prefer to tap first? Same result, one fewer surprise later:
+Homebrew only trusts non-official casks that you install by their fully
+qualified name or trust explicitly.
+
+Prefer to tap first? Same result, and trusting the cask explicitly lets you use
+the short name afterwards:
 
 ```sh
 brew tap setchy/brews
+brew trust --cask setchy/brews/atlassify
 brew install --cask atlassify
 ```
 
@@ -58,9 +63,20 @@ brew update && brew upgrade --cask atlassify
 2. Check it locally:
 
    ```sh
-   brew audit --cask --new Casks/<token>.rb
    brew style Casks/<token>.rb
-   brew install --cask ./Casks/<token>.rb
+   HOMEBREW_DEVELOPER=1 brew install --cask ./Casks/<token>.rb
+   ```
+
+   Homebrew 7 no longer loads casks from file paths: `brew install` needs
+   `HOMEBREW_DEVELOPER=1`, and `brew audit` rejects paths outright. CI runs
+   [`Cask lint`][cask-lint] (`brew style` + `brew audit`) on every PR. To
+   audit locally, tap the repo, trust the cask, and use its tap-qualified
+   name:
+
+   ```sh
+   brew tap setchy/brews
+   brew trust --cask setchy/brews/<token>
+   brew audit --cask setchy/brews/<token>
    ```
 
 3. Open a PR — CODEOWNERS routes it to [@setchy](https://github.com/setchy).
