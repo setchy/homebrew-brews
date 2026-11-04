@@ -23,20 +23,6 @@ cask "atlassify" do
 
   app "Atlassify.app"
 
-  preflight do
-    retries ||= 3
-    ohai "Attempting to close Atlassify.app to avoid unwanted user intervention" if retries >= 3
-    while retries > 0
-      if system "/usr/bin/pkill", "-f", "/Applications/Atlassify.app"
-        break
-      else
-        retries -= 1
-        sleep 1
-      end
-    end
-    opoo "Unable to forcibly close Atlassify.app"
-  end
-
   uninstall quit: [
     "com.electron.atlassify",
     "com.electron.atlassify.helper",
@@ -48,6 +34,7 @@ cask "atlassify" do
     "~/Library/Caches/atlassify-updater",
     "~/Library/Caches/com.electron.atlassify*",
     "~/Library/HTTPStorages/com.electron.atlassify",
+    "~/Library/Logs/atlassify",
     "~/Library/Preferences/com.electron.atlassify*.plist",
     "~/Library/Saved Application State/com.electron.atlassify.savedState",
   ]
