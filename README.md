@@ -1,9 +1,8 @@
 # 🍻 setchy's Homebrew Tap
 
-[![Homebrew tap](https://img.shields.io/badge/Homebrew-setchy%2Fbrews-FBB040?logo=homebrew&logoColor=white)](https://github.com/setchy/homebrew-brews)
-[![Renovate](https://img.shields.io/badge/dependencies-Renovate-1A1F6C?logo=renovatebot&logoColor=white)](https://github.com/setchy/homebrew-brews/blob/main/renovate.json)
-[![Renovate config validation](https://github.com/setchy/homebrew-brews/actions/workflows/renovate.yml/badge.svg)](https://github.com/setchy/homebrew-brews/actions/workflows/renovate.yml)
-[![GitHub last commit](https://img.shields.io/github/last-commit/setchy/homebrew-brews)](https://github.com/setchy/homebrew-brews/commits/main)
+[![Homebrew tap][homebrew-badge]][homebrew]
+[![Renovate enabled][renovate-badge]][renovate]
+[![Last commit][commit-badge]][commits]
 
 A small tap for the Homebrew casks I build and maintain. Install with a single
 command, upgrade with the usual Homebrew muscle memory.
@@ -74,3 +73,11 @@ manage the checksum from the release assets.
 
 Open an [issue](https://github.com/setchy/homebrew-brews/issues) or send a PR.
 Bugs in an app itself belong in that app's upstream repository.
+
+<!-- LINK LABELS -->
+[homebrew]: https://github.com/setchy/homebrew-brews
+[homebrew-badge]: https://img.shields.io/badge/Homebrew-setchy%2Fbrews-FBB040?logo=homebrew&logoColor=white
+[renovate]: https://github.com/setchy/homebrew-brews/issues/2
+[renovate-badge]: https://img.shields.io/badge/Renovate-enabled-1A1F6C?logo=renovate&logoColor=white
+[commits]: https://github.com/setchy/homebrew-brews/commits/main
+[commit-badge]: https://img.shields.io/github/last-commit/setchy/homebrew-brews?logo=git&logoColor=white
