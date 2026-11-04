@@ -1,12 +1,13 @@
 cask "atlassify" do
   homepage "https://atlassify.io"
-  
+
   version "3.17.2"
   sha256 :no_check
 
   on_intel do
     url "https://github.com/setchy/atlassify/releases/download/v#{version}/Atlassify-#{version}-mac.zip"
   end
+
   on_arm do
     url "https://github.com/setchy/atlassify/releases/download/v#{version}/Atlassify-#{version}-arm64-mac.zip"
   end
@@ -24,18 +25,12 @@ cask "atlassify" do
 
   app "Atlassify.app"
 
-  preflight do
-    retries ||= 3
-    ohai "Attempting to close Atlassify.app to avoid unwanted user intervention" if retries >= 3
-    while retries > 0
-      if system "/usr/bin/pkill", "-f", "/Applications/Atlassify.app"
-        break
-      else
-        retries -= 1
-        sleep 1
-      end
-    end
-    opoo "Unable to forcibly close Atlassify.app"
+  preflight_steps do
+    terminate_process "/Applications/Atlassify.app",
+      match:           :full,
+      attempts:        3,
+      notices:         ["Attempting to close Atlassify.app to avoid unwanted user intervention"],
+      failure_message: "Unable to forcibly close Atlassify.app"
   end
 
   uninstall quit: [
