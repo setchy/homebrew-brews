@@ -1,0 +1,70 @@
+name: Cask lint
+
+on:
+  pull_request:
+    paths:
+      - Casks/**
+      - .github/workflows/cask-lint.yml
+  push:
+    branches:
+      - main
+    paths:
+      - Casks/**
+      - .github/workflows/cask-lint.yml
+  schedule:
+    # Mondays at 06:17 UTC: catches new Homebrew rules and dead download URLs
+    # even when nothing changed in this repository.
+    - cron: 17 6 * * 1
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash -xeuo pipefail {0}
+
+jobs:
+  lint:
+    name: brew style + audit
+    runs-on: macos-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - name: Set up Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@2026.11.02.1
+        with:
+          # Test against the latest stable Homebrew release, which is what users run.
+          stable: true
+
+      - name: Cache Homebrew Bundler RubyGems
+        uses: actions/cache@v6.1.0
+        with:
+          path: ${{ steps.set-up-homebrew.outputs.gems-path }}
+          key: ${{ runner.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
+          restore-keys: ${{ runner.os }}-rubygems-
+
+      - name: brew style
+        env:
+          TAP_NAME: ${{ steps.set-up-homebrew.outputs.tap-name }}
+        run: brew style "$TAP_NAME"
+
+      - name: brew audit
+        env:
+          TAP_NAME: ${{ steps.set-up-homebrew.outputs.tap-name }}
+        run: brew audit --cask --skip-style --tap="$TAP_NAME"
+
+      - name: brew audit (online, all architectures)
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        env:
+          TAP_NAME: ${{ steps.set-up-homebrew.outputs.tap-name }}
+        run: brew audit --cask --skip-style --online --arch=all --tap="$TAP_NAME"
+
+      - name: Homebrew version
+        if: always()
+        run: brew --version

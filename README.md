@@ -2,6 +2,7 @@
 
 [![Homebrew tap][homebrew-badge]][homebrew]
 [![Renovate enabled][renovate-badge]][renovate]
+[![Cask lint][cask-lint-badge]][cask-lint]
 
 A small tap for the Homebrew casks I build and maintain. Install with a single
 command, upgrade with the usual Homebrew muscle memory.
@@ -74,6 +75,8 @@ Open an [issue](https://github.com/setchy/homebrew-brews/issues) or send a PR.
 Bugs in an app itself belong in that app's upstream repository.
 
 <!-- LINK LABELS -->
+[cask-lint]: https://github.com/setchy/homebrew-brews/actions/workflows/cask-lint.yml
+[cask-lint-badge]: https://github.com/setchy/homebrew-brews/actions/workflows/cask-lint.yml/badge.svg
 [homebrew]: https://github.com/setchy/homebrew-brews
 [homebrew-badge]: https://img.shields.io/badge/Homebrew-setchy%2Fbrews-FBB040?logo=homebrew&logoColor=white
 [renovate]: https://github.com/setchy/homebrew-brews/issues/2
