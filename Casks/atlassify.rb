@@ -26,10 +26,10 @@ cask "atlassify" do
 
   preflight_steps do
     terminate_process "/Applications/Atlassify.app",
-      match:           :full,
-      attempts:        3,
-      notices:         ["Attempting to close Atlassify.app to avoid unwanted user intervention"],
-      failure_message: "Unable to forcibly close Atlassify.app"
+                      match:           :full,
+                      attempts:        3,
+                      notices:         ["Attempting to close Atlassify.app to avoid unwanted user intervention"],
+                      failure_message: "Unable to forcibly close Atlassify.app"
   end
 
   uninstall quit: [
